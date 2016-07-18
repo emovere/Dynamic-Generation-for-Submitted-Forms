@@ -31,12 +31,12 @@ class SportMeetup
      * @ORM\Column(type="integer")
      */
 
-    private $sport_id;
+    private $sport;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $position_id;
+    private $position;
 
     /**
      * @return mixed
@@ -57,34 +57,36 @@ class SportMeetup
     /**
      * @return mixed
      */
-    public function getSportId()
+    public function getSport()
     {
-        return $this->sport_id;
+        return $this->sport;
     }
 
     /**
-     * @param mixed $sport_id
+     * @param mixed $sport
      */
-    public function setSportId($sport_id)
+    public function setSport($sport)
     {
-        $this->sport_id = $sport_id;
+        $this->sport = $sport;
     }
 
     /**
      * @return mixed
      */
-    public function getPositionId()
+    public function getPosition()
     {
-        return $this->position_id;
+        return $this->position;
     }
 
     /**
-     * @param mixed $position_id
+     * @param mixed $position
      */
-    public function setPositionId($position_id)
+    public function setPosition($position)
     {
-        $this->position_id = $position_id;
+        $this->position = $position;
     }
+
+
 
 
 
