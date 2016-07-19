@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
- * @ORM\Table(name="sport")
+ * @ORM\Table(name="sport_meetup")
  */
 class SportMeetup
 {
@@ -28,13 +28,18 @@ class SportMeetup
     private $name;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var Sport
+     *
+     * @ORM\ManyToOne(targetEntity="Sport")
+     * @ORM\JoinColumn(name="sport_id", referencedColumnName="id", onDelete="CASCADE")
      */
-
     private $sport;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var Position
+     *
+     * @ORM\ManyToOne(targetEntity="Position")
+     * @ORM\JoinColumn(name="position_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $position;
 
@@ -55,7 +60,7 @@ class SportMeetup
     }
 
     /**
-     * @return mixed
+     * @return Sport
      */
     public function getSport()
     {

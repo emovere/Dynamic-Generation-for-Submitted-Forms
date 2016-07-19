@@ -35,6 +35,26 @@ class Position
      */
     private $name;
 
+    /**
+     * @var Sport
+     *
+     * @ORM\ManyToOne(targetEntity="Sport")
+     * @ORM\JoinColumn(name="sport_id", referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $sport;
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * @return mixed
@@ -50,6 +70,25 @@ class Position
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return Sport
+     */
+    public function getSport()
+    {
+        return $this->sport;
+    }
+
+    /**
+     * @param Sport $sport
+     * @return $this
+     */
+    public function setSport($sport)
+    {
+        $this->sport = $sport;
+
+        return $this;
     }
 
 
